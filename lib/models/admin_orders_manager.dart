@@ -1,0 +1,80 @@
+import 'dart:async';
+import 'package:app_cantina_murialdo/models/order.dart';
+import 'package:app_cantina_murialdo/models/user.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+
+class AdminOrdersManager extends ChangeNotifier {
+
+  final List<Order> _orders = [];
+
+  User userFilter;
+
+  List<Status> statusFilter = [Status.preparing, Status.delivered, Status.onItsWay, Status.canceled];
+
+  final Firestore firestore = Firestore.instance;
+
+  StreamSubscription _streamSubscription;
+
+  // ignore: avoid_positional_boolean_parameters
+  void updateAdmin(bool adminEnabled) {
+    _orders.clear();
+    _streamSubscription?.cancel();
+
+    if (adminEnabled) {
+      _listenToOrders();
+    }
+  }
+
+  List<Order> get filteredOrders{
+    List<Order> output = _orders;
+
+
+    if(userFilter != null){
+      output = output.where((o) =>  o.userId == userFilter.id).toList();
+    }
+
+    return output = output.where((element) => statusFilter.contains(element.status)).toList();
+  }
+
+  void _listenToOrders() {
+    _streamSubscription =
+        firestore.collection('orders').snapshots().listen((event) {
+      for (final change in event.documentChanges) {
+        switch (change.type) {
+          case DocumentChangeType.added:
+            _orders.add(Order.fromDocument(change.document));
+            break;
+          case DocumentChangeType.modified:
+            final modOrder = _orders.firstWhere(
+                (element) => element.orderId == change.document.documentID);
+            modOrder.updateFromDocument(change.document);
+            break;
+          case DocumentChangeType.removed:
+            break;
+        }
+      }
+      notifyListeners();
+    });
+  }
+
+  void setUserFilter(User user){
+    userFilter = user;
+    notifyListeners();
+  }
+
+  void setStatusFilter({Status status, bool enabled}){
+    if(enabled){
+      statusFilter.add(status);
+    }else{
+      statusFilter.remove(status);
+    }
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _streamSubscription?.cancel();
+  }
+}

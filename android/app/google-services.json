@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "574962275612",
+    "firebase_url": "https://app-cantina-murialdo.firebaseio.com",
+    "project_id": "app-cantina-murialdo",
+    "storage_bucket": "app-cantina-murialdo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574962275612:android:ea4f7a9b41f2ef55ded6d9",
+        "android_client_info": {
+          "package_name": "com.greis.app_cantina_murialdo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574962275612-hf6411vtu01te9b1bgj8be99gamd1rs4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greis.app_cantina_murialdo",
+            "certificate_hash": "6278008b421723baf43e5eaceb2153560765dfe8"
+          }
+        },
+        {
+          "client_id": "574962275612-ahdn3e4t1n95ghqjiqo63kuhhvn0gpc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANpM7eds7zgIrTCCFJn6Bp2jCTEOkHJT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574962275612-ahdn3e4t1n95ghqjiqo63kuhhvn0gpc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

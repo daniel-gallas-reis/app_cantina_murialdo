@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>574962275612-niolg4f9bbksdn14ebs1bdp1ggk8ndf8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.574962275612-niolg4f9bbksdn14ebs1bdp1ggk8ndf8</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>574962275612-hf6411vtu01te9b1bgj8be99gamd1rs4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyALdNdheb3-wgQ4mJpeMnqajnt7EsqvjX0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>574962275612</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.greis.appCantinaMurialdo</string>
+	<key>PROJECT_ID</key>
+	<string>app-cantina-murialdo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-cantina-murialdo.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:574962275612:ios:c40363429bad9a8aded6d9</string>
+	<key>DATABASE_URL</key>
+	<string>https://app-cantina-murialdo.firebaseio.com</string>
+</dict>
+</plist>
